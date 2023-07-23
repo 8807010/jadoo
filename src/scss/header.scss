@@ -40,6 +40,7 @@
   }
 
   &._header-scroll {
+    transform: translate(0, -100%);
     background-color: rgba(255, 255, 255, 0.85);
 
     .header__container {
@@ -49,7 +50,9 @@
     }
   }
 
-  &._header-show {}
+  &._header-show {
+    transform: translate(0, 0);
+  }
 }
 
 .menu {
@@ -98,6 +101,7 @@
 
       .menu-open & {
         left: 0;
+        height: 100vh;
 
         &::before {
           left: 0;
@@ -160,6 +164,10 @@
   font-weight: 500;
   line-height: math.div(22, 17);
   gap: rem(42);
+
+  @media (max-width: $mobile) {
+    margin-top: auto;
+  }
 
   // .action-header__login
   &__login {
