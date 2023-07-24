@@ -3,6 +3,30 @@
 
   // .page__main
   &__main {}
+
+  // .page__services
+  &__services {}
 }
 
 //========================================================================================================================================================
+.header-block {
+
+  // .header-block__label
+  &__label {
+    font-size: rem(18);
+    line-height: math.div(27, 18);
+    font-weight: 600;
+
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+  }
+
+  // .header-block__title
+  &__title {
+    color: $darkColor;
+    @include adaptiveValue("font-size", 50, 34);
+    line-height: math.div(64, 50);
+    font-family: "Volkhov";
+  }
+}
