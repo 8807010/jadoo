@@ -356,4 +356,96 @@
   }
 }
 
+//========================================================================================================================================================
+.destinations {
+  @include adaptiveValue("padding-top", 80, 25);
+  @include adaptiveValue("padding-bottom", 90, 25);
+
+  // .destinations__container
+  &__container {}
+
+  // .destinations__header
+  &__header {
+    text-align: center;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 30);
+    }
+  }
+
+  // .destinations__items
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include adaptiveValue("gap", 47, 20);
+
+    @media (min-width: $tablet) {
+      margin-right: rem(65);
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background: url("@img/destinations/decore.svg") 0 0 / 100% no-repeat;
+        width: rem(96);
+        height: rem(252);
+        bottom: rem(45);
+        right: rem(-65);
+      }
+    }
+
+    @media (max-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: em(650)) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // .destinations__item
+  &__item {}
+}
+
+.item-destinations {
+  display: grid;
+  border-radius: rem(24);
+  overflow: hidden;
+  filter: drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.02)) drop-shadow(0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0151852)) drop-shadow(0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0121481)) drop-shadow(0px 20px 13px rgba(0, 0, 0, 0.01)) drop-shadow(0px 8.14815px 6.51852px rgba(0, 0, 0, 0.00785185)) drop-shadow(0px 1.85185px 3.14815px rgba(0, 0, 0, 0.00481481));
+
+  // .item-destinations__image-ibg
+  &__image-ibg {
+    padding-bottom: percent(314, 327);
+  }
+
+  // .item-destinations__body
+  &__body {
+    font-weight: 500;
+    font-size: rem(18);
+    line-height: 124%;
+    gap: rem(20);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    background-color: #fff;
+    padding: rem(25) rem(20);
+  }
+
+  // .item-destinations__location
+  &__location {}
+
+  // .item-destinations__price
+  &__price {}
+
+  // .item-destinations__trip
+  &__trip {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      margin-right: rem(14);
+    }
+  }
+}
+
+
 //====================================================================================================
